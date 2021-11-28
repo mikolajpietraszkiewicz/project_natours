@@ -1,0 +1,40 @@
+.header{
+  height: 95vh;
+  background-image:
+          linear-gradient(
+                          to right bottom,
+                          rgba($color_main, .8),
+                          rgba($color_secondary_2, .8)
+          ),
+          url("../../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+
+  position: relative;
+
+
+  &_box_logo{
+    position:absolute;
+    top: 4rem;
+    left: 4rem;
+
+    @include mediaRespond(tp){
+      top: 7rem;
+      left: 7rem;
+    }
+
+    &_img{
+      height: 5.5rem;
+
+      @include mediaRespond(tp){
+        height: 7.5rem;
+      }
+      @include mediaRespond(p){
+        height: 8.5rem;
+      }
+
+    }
+  }
+}

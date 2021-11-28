@@ -1,0 +1,118 @@
+
+.footer{
+  @include flexDirection(column);
+  align-items: center;
+  width: 100%;
+  //border:3px solid black;
+  background-color: $color-grey-light-3;
+
+  &__logo__box{
+    @include flexDirection(row);
+    justify-content: center;
+    //border: 3px solid teal;
+    margin: 4rem 0 2rem 0;
+    &__content{
+      background-size: cover;
+      width: 50%;
+    }
+  }
+
+  &__content__container{
+    @include flexDirection(row);
+    justify-content: space-evenly;
+    //border:3px solid orangered;
+    width: 100%;
+    font-size: 1.6rem;
+    //color:$color-secondary_2;
+
+
+    &__left {
+      font-size: 2rem;
+      //border: 3px solid blue;
+      width: 50vw;
+      @include flexDirection(row);
+      justify-content: center;
+      align-items: center;
+
+
+      &__list {
+        @include flexDirection(row);
+        list-style-type: none;
+        //border: 3px solid red;
+
+        &__item > a{
+          padding: 0 1rem;
+          text-decoration: none;
+          list-style : none;
+          background-image: linear-gradient(90deg, $color-main,$color-secondary_1);
+          -webkit-background-clip:text;
+          color:transparent;
+        }
+
+      }
+    }
+
+    &__right{
+      //border:3px solid green;
+      width: 50vw;
+      @include flexDirection(row);
+      justify-content: center;
+      margin: 2rem 0 ;
+
+      &__text{
+        //border:3px solid blue;
+        max-width: 75%;
+        font-weight: bold;
+        padding: 1rem 0 ;
+
+        background-image: linear-gradient(90deg, $color-main,$color-secondary_1);
+        -webkit-background-clip:text;
+        color:transparent;
+
+      }
+    }
+
+  }
+
+  @include mediaRespond(tl) {
+    &__content__container{
+      @include flexDirection(column);
+      align-items: center;
+      //&__left {
+      //  width: 80vw;
+      //}
+      &__right{
+        width: 70vw;
+      }
+    }
+  }
+  @include mediaRespond(p) {
+    &__content__container{
+      &__right{
+        width: 90vw;
+      }
+    }
+  }
+
+}
+
+.footer__link {
+  &:link,
+  &:visited {
+    background-image: linear-gradient(90deg, $color-secondary_1,$color-main);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    display: inline-block;
+    &:hover{
+      transform: scale(0.98);
+    }
+  }
+}
+
+.footer__line{
+  border: 1px solid;
+  border-image-slice: 1;
+  //border-width: 100%;
+  border-image-source: linear-gradient(90deg, $color-main,$color-secondary_2);
+}

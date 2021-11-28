@@ -1,0 +1,291 @@
+
+.section-tours{
+  @include flexDirection(column);
+  justify-content: center;
+  align-items: center;
+
+  padding:11rem 0;
+  background-color: $color-grey-light-1;
+  margin-top: -5rem;
+
+  @include mediaRespond(tl){
+    margin-top: -10rem;
+  }
+
+}
+
+.tours__container {
+  @include flexDirection(row);
+  width: 80vw;
+  max-width: $max-width;
+  justify-content: space-evenly;
+  gap: 6rem;
+
+  &__item{
+    width: 30%;
+    //height: 50rem;
+
+    position: relative;
+
+    perspective: 150rem;
+    &:hover &__side__front{
+      transform: rotateY(-180deg);
+    }
+
+    &:hover &__side__back{
+      transform: rotateY(0deg);
+    }
+
+    &__side{
+      border-radius: 3px;
+      overflow: hidden;
+
+      //position: absolute;
+      top:0;
+      left:0;
+      transition: all 0.8s;
+
+      width: 100%;
+      height: 100%;
+
+      @include flexDirection(column);
+      justify-content: start;
+      align-items:  center;
+      text-align: center;
+      backface-visibility: hidden;
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+
+
+      &__front {
+        background-color: rgba($color-white, 0.7);
+
+        &__image{
+          width:100%;
+          height: 20rem;
+
+          //background-blend-mode: color-dodge;
+          background-blend-mode: screen;
+
+          background-size: cover;
+          background-position: top;
+          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+          margin-bottom: 1rem;
+
+          &__1{
+            background-image:
+                    linear-gradient(
+                                    to right bottom,
+                                    rgba(#ffb13b, .3),
+                                    rgba(#FF8500, .99)
+                    ),
+                    url("../../img/nat-5.jpg");
+          }
+
+          &__2{
+            background-image:
+                    linear-gradient(
+                                    to right bottom,
+                                    rgba(#3bffba, .3),
+                                    rgba(#098c83, .99)
+                    ),
+                    url("../../img/nat-6.jpg");
+          }
+
+          &__3{
+            background-image:
+                    linear-gradient(
+                                    to right bottom,
+                                    rgba(rgba(255, 132, 132, 0.8), .3),
+                                    rgba(#ff0000, .99)
+                    ),
+                    url("../../img/nat-7.jpg");
+          }
+        }
+
+
+        &__headers{
+          margin:0;
+          padding:0;
+          position: relative;
+          width: 100%;
+          font-size:2.2rem;
+          color:white;
+          text-transform: uppercase;
+
+          :nth-child(1){
+            padding: .5rem 1rem;
+            background-color: #FF8500;
+            position: absolute;
+            right:2rem;
+            top:-10rem;
+            opacity:0.9;
+          }
+          :nth-child(2){
+            padding: .5rem 1rem;
+            background-color: #FF8500;
+            position: absolute;
+            right:2rem;
+            top:-6rem;
+            opacity:0.9;
+            z-index: 22212;
+          }
+        }
+
+        &__text{
+          padding:1rem;
+          font-size: 1.6rem;
+          width: 80%;
+          color: #424242;
+
+          &:not(:last-child) {
+            border-bottom: 1px #d9d9d9 solid;
+          }
+
+          &:last-child {
+            padding-bottom:2.5rem;
+          }
+
+        }
+
+      }
+
+      &__back {
+        position: absolute;
+        background-image:
+                linear-gradient(
+                                to right bottom,
+                                rgba(#ffa626, .8),
+                                rgba(#FF8500, .8)
+                );
+        //background-color: #FF8500;
+        transform: rotateY(180deg);
+
+        &__price{
+          font-size: 5rem;
+          padding: 9rem 0 7rem 0;
+          color:white;
+        }
+
+        &__text{
+          font-size: 2.5rem;
+          color:white;
+        }
+
+        &__button{
+          font-size: 1.6rem;
+          margin-top: 2rem;
+          //padding:.1rem 3rem;
+          height:5rem;
+        }
+      }
+    }
+  }
+
+  //-----------------------------------------------------------------
+
+  @include mediaRespond(tl){
+    @include flexDirection(column);
+    justify-content: center;
+    align-items: center;
+
+    &__item{
+      width:60vw;
+      max-width: 450px;
+
+      background-color: $color-white;
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      overflow: hidden;
+      backface-visibility: hidden;
+
+      &:hover &__side__front{
+        transform: rotateY(0deg);
+      }
+
+      &:hover &__side__back{
+        transform: rotateY(0deg);
+      }
+
+      &__side{
+        backface-visibility: hidden;
+        border-radius: 0px;
+        overflow: hidden;
+
+        position: relative;
+        top:0;
+        left:0;
+        transition: all 0.8s;
+
+        width: 100%;
+        height: 100%;
+
+        @include flexDirection(column);
+        justify-content: start;
+        align-items:  center;
+        text-align: center;
+        backface-visibility: hidden;
+        box-shadow: none;
+
+
+        &__front {
+          background-color: rgba($color-white, 0.7);
+
+
+          &__image{
+            width:100%;
+
+            //background-blend-mode: color-dodge;
+            background-blend-mode: screen;
+
+            background-size: cover;
+            background-position: top;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 1rem;
+
+          }
+
+          &__text{
+            font-size: 2rem;
+            &:last-child {
+              padding-bottom:0rem;
+            }
+          }
+
+        }
+
+        &__back {
+
+          background-image:
+                  linear-gradient(
+                                  to right bottom,
+                                  rgba(#ffa626, .8),
+                                  rgba(#FF8500, .8)
+                  );
+          transform: rotateY(0deg);
+
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+
+          &__price{
+            font-size: 5rem;
+            padding: 4rem 0 0 0;
+            color:white;
+          }
+
+          &__text{
+            font-size: 2.5rem;
+            color:white;
+          }
+
+          &__button{
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            //padding:.1rem 3rem;
+            height:5rem;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+}

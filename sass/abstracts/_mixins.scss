@@ -1,0 +1,30 @@
+
+
+@mixin flexDirection($direction){
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: nowrap;
+}
+
+//==================================================
+//===============MEDIA QUERY MANAGER===============
+//==================================================
+//1 em = 16px;
+//p  600px
+//tp 900px
+//tl 1200px
+//ts 1800px
+
+@mixin mediaRespond($deviceType){
+  @if $deviceType == p{
+    @media (max-width: 37.5em){@content}
+  }@else if($deviceType == tp){
+    @media (max-width: 56.25em){@content}
+  }@else if($deviceType == tl){
+    @media (max-width: 75em){@content}
+  }@else if($deviceType == ls){
+    @media (min-width: 112.5em){@content}
+  }
+}
+//==================================================
+//==================================================

@@ -1,0 +1,125 @@
+.section-story{
+  @include flexDirection(column);
+  justify-content: center;
+  align-items: center;
+
+  padding:5rem 0;
+  position: relative;
+
+  .bg-video{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.17;
+
+    &__content{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include mediaRespond(tl){
+    padding:0 0 5rem 0;
+  }
+
+}
+
+.story__container{
+  //background-color: #7ed56f;
+  @include flexDirection(column);
+  width: 60vw;
+  max-width: $max-width * 0.6;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 4rem;
+
+  &__item{
+    background-color: rgba($color-white, 0.6);
+    width: 100%;
+    //height: 100%;
+    padding: 3rem 5rem;
+
+    transform: skewX(-8deg);
+
+    &__shape{
+      width: 14rem;
+      aspect-ratio: 1/1;
+      float:left;
+
+      shape-outside: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      transform: translateX(-2rem) skewX(8deg);
+      position: relative;
+      overflow: hidden;
+
+      &__image {
+        height: 100%;
+        transform: translateX(-16%);
+        transition: all 0.5s ease-out;
+      }
+
+      &__caption{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, 100%);
+
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+
+        opacity: 0;
+        transition: all 0.5s ease-out;
+
+        backface-visibility: hidden;
+      }
+
+    }
+
+    &__text{
+      font-size: 1.6rem;
+      transform: skewX(8deg);
+    }
+
+    &:hover {
+
+      .story__container__item__shape__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        z-index: 333;
+      }
+
+      .story__container__item__shape__image{
+        filter: blur(2px) brightness(80%);
+      }
+
+    }
+
+  }
+
+  @include mediaRespond(tp){
+
+    &{
+      width: 70vw;
+    }
+
+    &__item{
+      transform: skewX(0deg);
+      &__shape {
+        transform: translateX(-2rem) skewX(0deg);
+      }
+      &__text{
+        font-size: 1.6rem;
+        transform: skewX(0deg);
+      }
+    }
+
+
+  }
+
+}

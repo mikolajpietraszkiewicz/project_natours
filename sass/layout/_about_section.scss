@@ -1,0 +1,67 @@
+.section-about{
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 0 0;
+  margin-top: -12vh;
+}
+
+.about_container {
+
+  @include flexDirection(row);
+
+  width: 80vw;
+  max-width: $max-width;
+  justify-content: center;
+
+  &>div {
+    margin: 3rem;
+
+    @include mediaRespond(tp){
+      margin: 0;
+    }
+
+  }
+
+  @include mediaRespond(tp){
+    @include flexDirection(column);
+    padding-bottom: 4rem;
+  }
+
+}
+
+.about__text__box{
+
+  width:60%;
+  //background-color: #6f98d5;
+  .text__box__heading{
+    font-size: 1.8rem;
+    margin-bottom: .2rem;
+  }
+  .text__box__paragraph{
+    font-size: 1.5rem;
+
+    &:not(:last-child){
+      margin-bottom: 3rem;
+    }
+  }
+
+  @include mediaRespond(tp){
+    padding-top: 3rem;
+    width:100%;
+    margin: 0;
+  }
+
+}
+
+.about__image__box{
+  width:40%;
+  @include mediaRespond(tp){
+    width:100%;
+    padding-top: 3rem;
+  }
+
+  @include mediaRespond(p){
+    padding-top: 0rem;
+  }
+
+  //background-color: #7ed56f;
+}

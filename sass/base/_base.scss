@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  //defines 1 rem for all site calculations
+  font-size: 62.5%;
+
+  @include mediaRespond(tl){
+    font-size: 56%;
+  }
+
+  @include mediaRespond(tp){
+    font-size: 50%;
+  }
+
+  @include mediaRespond(p){
+    font-size: 45%;
+  }
+
+  @include mediaRespond(ls){
+    font-size: 75%;
+  }
+
+}

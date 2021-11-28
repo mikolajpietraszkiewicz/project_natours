@@ -134,8 +134,10 @@
   @include mediaRespond(tp){
     &{
       &__container{
+        width: 90vw;
+        max-height: 90vh;
         &__images{
-          width: 50%;
+          width: 40%;
         }
         &__content{
           &__columnBox{
@@ -148,8 +150,31 @@
   @include mediaRespond(p){
     &{
       &__container{
+        @include flexDirection(column-reverse);
+        justify-content: center;
+
+        width: 85vw;
+        max-height: 85vh;
+
         &__images{
-          display: none;
+          @include flexDirection(row);
+          justify-content: center;
+
+          width: 100%;
+          aspect-ratio: 1;
+
+          &__image{
+
+            &__top{
+              height: 100%;
+              background-position: center;
+            }
+            &__bottom{
+              height: 100%;
+              background-position: center;
+            }
+          }
+
         }
       }
     }

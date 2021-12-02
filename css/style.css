@@ -316,7 +316,6 @@ body {
 
 .popup {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.89);
   top: 0;
   left: 0;
   width: 100vw;
@@ -324,12 +323,18 @@ body {
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.89);
   transition: all .3s;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center; }
+  @supports (backdrop-filter: blur(5px)) or (-webkit-backdrop-filter: 5px) {
+    .popup {
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.7); } }
   .popup:target {
     opacity: 1;
     visibility: visible; }

@@ -25,12 +25,12 @@ Feel free to use &mdash;<a href="#" class="footer__link"> Mikołaj Pietraszkiewi
 
 just install packages from .json, then:
 
-> local server:
+> start:
 
-	    npm run devserver
+	    npm run start
 
-> scss compiler:
+> build:
 
-	    npm run compile:sass
+	    npm run build
 
-*(check the path in package.json -> "node-sass sass/main.scss css/style.css -w" )*
+! *just check the paths in package.json* !
